@@ -418,7 +418,7 @@
           <label for="opt-${index}" style="width:100%; cursor:pointer;">${option}</label>
         `;
         
-        // Handle select action click
+        // Handle select action  click
         optionBox.addEventListener("click", () => {
           userAnswers[currentQuestionIndex] = index;
           document.querySelectorAll(".option-box").forEach(box => box.classList.remove("selected"));
