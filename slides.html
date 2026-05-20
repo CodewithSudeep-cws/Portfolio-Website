@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudeep Singh | Premium Academic Roadmap</title>
+  <title>Sudeep Singh | Ultra 3D Presentation Engine</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --bg-dark: #020617;
-      --card-bg: rgba(15, 23, 42, 0.55);
+      --bg-dark: #090d16;
+      --card-bg: rgba(15, 23, 42, 0.6);
       --primary: #0ea5e9;
       --accent: #6366f1;
       --danger: #f43f5e;
       --text: #f8fafc;
       --text-muted: #94a3b8;
       --glass-border: rgba(255, 255, 255, 0.08);
-      --neon-glow: rgba(14, 165, 233, 0.15);
+      --neon-glow: rgba(14, 165, 233, 0.2);
     }
 
     body.light-theme {
       --bg-dark: #f1f5f9;
-      --card-bg: rgba(255, 255, 255, 0.7);
+      --card-bg: rgba(255, 255, 255, 0.75);
       --text: #0f172a;
       --text-muted: #475569;
       --primary: #0284c7;
@@ -40,182 +40,140 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      perspective: 1000px; /* Supports 3D animations */
-    }
-
-    /* Moving Dynamic Background Mesh Effect */
-    body::before {
-      content: '';
-      position: absolute;
-      width: 200%; height: 200%;
-      top: -50%; left: -50%;
-      background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-                  radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.06) 0%, transparent 40%);
-      animation: ambientShift 20s linear infinite;
-      z-index: -2;
-    }
-
-    @keyframes ambientShift {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      transition: background 0.4s ease;
     }
 
     .slider-wrapper { width: 100%; height: 100%; position: relative; overflow: hidden; }
 
+    /* Ultra Smooth Horizontal Flex Engine */
     .slides-container {
       display: flex;
-      width: 1300%;
+      width: 1300%; /* 13 Slides Exactly locked */
       height: 100%;
-      transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1); /* Ultra Smooth Transition */
+      transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
     }
 
+    /* 3D Scale Cinematic Transitions */
     .slide {
       width: calc(100% / 13);
       height: 100%;
-      padding: 40px 70px;
+      padding: 50px 80px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       flex-shrink: 0;
       position: relative;
-      opacity: 0.3;
-      transform: scale(0.95);
-      transition: opacity 0.6s, transform 0.6s;
+      opacity: 0.1;
+      transform: scale(0.92) translateY(10px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Active Slide Premium Animation Effect */
     .slide.active-slide {
       opacity: 1;
-      transform: scale(1);
+      transform: scale(1) translateY(0);
     }
 
-    /* Premium Glassmorphism Cards */
+    /* Premium Neon Glassmorphism Cards */
     .card-tile {
       background: var(--card-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      padding: 24px;
-      border-radius: 20px;
-      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      padding: 24px; border-radius: 20px; border: 1px solid var(--glass-border);
       box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s ease;
     }
     .card-tile:hover {
-      transform: translateY(-8px) scale(1.02);
-      border-color: var(--primary);
-      box-shadow: 0 20px 40px -15px var(--neon-glow), 0 0 15px rgba(14, 165, 233, 0.1);
+      transform: translateY(-6px); border-color: var(--primary);
+      box-shadow: 0 15px 30px -10px var(--neon-glow), 0 0 15px rgba(14, 165, 233, 0.15);
     }
+    .card-tile i { font-size: 2.2rem; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; display: block; }
 
-    /* Intro Frame Custom Layout with Photo Glow */
-    .intro-flex { display: flex; align-items: center; justify-content: space-between; gap: 40px; width: 100%; }
+    /* Intro Panel Styling with Animated Photo Glow */
+    .intro-flex { display: flex; align-items: center; justify-content: space-between; gap: 50px; width: 100%; }
     .intro-text { flex: 1; }
     .intro-image { flex: 0 0 260px; position: relative; }
     .intro-image img { 
       width: 240px; height: 310px; object-fit: cover; border-radius: 24px; 
-      border: 2px solid var(--glass-border);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      transition: 0.5s;
+      border: 2px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
     .intro-image::after {
       content: ''; position: absolute; top: -4px; left: -4px; right: 16px; bottom: -4px;
       background: linear-gradient(45deg, var(--primary), var(--accent));
-      border-radius: 26px; z-index: -1; opacity: 0.4; blur: 8px;
+      border-radius: 26px; z-index: -1; opacity: 0.4; filter: blur(8px);
     }
-    .slide.active-slide .intro-image img {
-      animation: profileGlow 3s ease-in-out infinite alternate;
-    }
+    .slide.active-slide .intro-image img { animation: neonPulse 3s infinite alternate; }
+    @keyframes neonPulse { 0% { border-color: var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.5); } 100% { border-color: var(--primary); box-shadow: 0 0 20px var(--primary); } }
 
-    @keyframes profileGlow {
-      0% { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0px var(--neon-glow); border-color: var(--glass-border); }
-      100% { box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 25px var(--primary); border-color: var(--primary); }
-    }
-
-    /* Headings Styling with Radiant Gradient Text */
-    h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 10px; font-weight: 800; background: linear-gradient(135deg, #fff 30%, var(--primary) 70%, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    body.light-theme h1 { background: linear-gradient(135deg, #0f172a 30%, var(--primary) 70%, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    
-    h2 { font-size: 2rem; color: var(--text); margin-bottom: 22px; font-weight: 700; position: relative; display: inline-block; }
-    h2::after { content: ''; display: block; width: 50%, height: 4px; background: linear-gradient(90deg, var(--primary), transparent); margin-top: 4px; border-radius: 2px; }
-    
-    h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 8px; font-weight: 600; letter-spacing: -0.3px; }
+    /* Typography */
+    h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 12px; background: linear-gradient(135deg, #fff 30%, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    body.light-theme h1 { background: linear-gradient(135deg, #0f172a 30%, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h2 { font-size: 2.1rem; font-weight: 700; margin-bottom: 25px; border-left: 5px solid var(--primary); padding-left: 15px; }
+    h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 8px; font-weight: 600; }
     p { font-size: 1.05rem; color: var(--text-muted); line-height: 1.5; }
 
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
 
-    .card-tile i { font-size: 2.2rem; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; display: block; }
-
-    /* Neon Warning Sign MCQ Container */
+    /* Cyber MCQ Panel */
     .danger-box { 
-      border-left: 4px solid var(--danger); background: rgba(244, 63, 94, 0.02); padding: 16px; border-radius: 0 16px 16px 0; margin-bottom: 14px; 
-      border-top: 1px solid rgba(244, 63, 94, 0.05); border-right: 1px solid rgba(244, 63, 94, 0.05); border-bottom: 1px solid rgba(244, 63, 94, 0.05);
-      transition: 0.3s;
+      border-left: 4px solid var(--danger); background: rgba(244, 63, 94, 0.02); padding: 15px; border-radius: 0 16px 16px 0; margin-bottom: 12px; 
+      border: 1px solid rgba(244, 63, 94, 0.05); border-left: 4px solid var(--danger); transition: 0.3s;
     }
-    .danger-box:hover { background: rgba(244, 63, 94, 0.06); box-shadow: 0 5px 15px rgba(244, 63, 94, 0.1); transform: translateX(4px); }
-    .danger-box strong { color: var(--danger); font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
-    .ans { color: #10b981; font-weight: 700; margin-top: 6px; display: flex; align-items: center; gap: 5px; }
+    .danger-box:hover { background: rgba(244, 63, 94, 0.05); transform: translateX(4px); }
+    .danger-box strong { color: var(--danger); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
+    .ans { color: #10b981; font-weight: 700; margin-top: 5px; display: flex; align-items: center; gap: 6px; }
 
-    /* Action Flowing Buttons */
     .run-btn {
-      display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 10px 20px;
-      background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; text-decoration: none; border-radius: 12px;
-      font-weight: 700; font-size: 0.85rem; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.25); transition: 0.3s;
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 15px; padding: 10px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; text-decoration: none; border-radius: 10px;
+      font-weight: 700; font-size: 0.85rem; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2); transition: 0.3s;
     }
-    .run-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4); }
+    .run-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(14, 165, 233, 0.4); }
 
-    /* Premium Navigation System */
+    /* Controls Overlay Setup */
     .nav-btn {
       position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--glass-border); color: var(--text);
-      width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex;
-      justify-content: center; align-items: center; z-index: 10; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); border: 1px solid var(--glass-border); color: var(--text);
+      width: 42px; height: 42px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; z-index: 10; transition: 0.3s;
     }
-    .prev-btn { left: 15px; }
-    .next-btn { right: 15px; }
-    .nav-btn:hover { background: var(--primary); color: #020617; border-color: var(--primary); box-shadow: 0 0 15px var(--primary); }
+    .prev-btn { left: 20px; } .next-btn { right: 20px; }
+    .nav-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
 
     .theme-toggle-btn {
-      position: absolute; top: 15px; right: 75px;
+      position: absolute; top: 20px; right: 80px;
       background: var(--card-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(8px); color: var(--text);
-      padding: 7px 14px; border-radius: 16px; cursor: pointer; font-weight: 700; z-index: 20; font-size: 0.8rem; transition: 0.3s;
+      padding: 6px 14px; border-radius: 14px; cursor: pointer; font-weight: 700; z-index: 20; font-size: 0.8rem; transition: 0.3s;
     }
-    .theme-toggle-btn:hover { border-color: var(--primary); background: var(--glass-border); }
+    .theme-toggle-btn:hover { border-color: var(--primary); }
 
     .pause-btn {
-      position: absolute; bottom: 18px; right: 20px;
+      position: absolute; bottom: 20px; right: 20px;
       background: var(--card-bg); border: 1px solid var(--glass-border); color: var(--text);
       width: 36px; height: 36px; border-radius: 50%; cursor: pointer; z-index: 20; display: flex; justify-content: center; align-items: center; transition: 0.3s;
     }
-    .pause-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .pause-btn:hover { color: var(--primary); border-color: var(--primary); }
 
-    .dots-container {
-      position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 8px; z-index: 10;
-    }
+    .dots-container { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
     .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--glass-border); cursor: pointer; transition: 0.3s; }
-    .dot.active { background: var(--primary); width: 24px; border-radius: 8px; box-shadow: 0 0 10px var(--primary); }
+    .dot.active { background: var(--primary); width: 22px; border-radius: 8px; box-shadow: 0 0 8px var(--primary); }
 
-    /* Animated Vector Analytics Path */
-    .growth-path {
-      stroke-dasharray: 1200; stroke-dashoffset: 1200;
-      animation: drawPath 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
+    /* Animated Vector Graphics Components */
+    .growth-path { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: drawPath 4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
     @keyframes drawPath { to { stroke-dashoffset: 0; } }
 
     .bar-chart { display: flex; flex-direction: column; gap: 12px; }
     .bar-item { display: flex; align-items: center; gap: 15px; }
     .bar-label { width: 180px; color: var(--text-muted); font-weight: 600; text-align: right; font-size: 0.9rem; }
-    .bar-track { flex-grow: 1; height: 22px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 6px; overflow: hidden; }
+    .bar-track { flex-grow: 1; height: 22px; background: rgba(255,255,255,0.01); border: 1px solid var(--glass-border); border-radius: 6px; overflow: hidden; }
     .bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); display: flex; align-items: center; padding-left: 12px; font-weight: 700; color: #fff; font-size: 0.75rem; width: 0%; transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1); }
   </style>
 </head>
 <body>
 
-  <button class="theme-toggle-btn" onclick="toggleTheme()"><i class="fas fa-palette"></i> Toggle UI Theme</button>
+  <button class="theme-toggle-btn" onclick="toggleTheme()"><i class="fas fa-palette"></i> Toggle Theme</button>
 
   <div class="slider-wrapper">
-    <button class="nav-btn prev-btn" onclick="moveSlide(-1)"><i class="fas fa-arrow-left"></i></button>
-    <button class="nav-btn next-btn" onclick="moveSlide(1)"><i class="fas fa-arrow-right"></i></button>
+    <button class="nav-btn prev-btn" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button class="nav-btn next-btn" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
     <button class="pause-btn" id="pauseBtn" onclick="togglePlayPause()"><i class="fas fa-pause"></i></button>
 
     <div class="slides-container" id="slidesContainer">
@@ -223,19 +181,19 @@
       <div class="slide active-slide">
         <div class="intro-flex">
           <div class="intro-text">
-            <span style="color: var(--primary); font-weight: 700; letter-spacing: 3px; font-size: 0.8rem; display:block; margin-bottom:8px;">CREATIVE ARCHITECTURE</span>
+            <span style="color: var(--primary); font-weight: 700; letter-spacing: 2px; font-size: 0.8rem; display:block; margin-bottom:5px;">SYSTEM ROADMAP</span>
             <h1>Hi, I'm <br>Sudeep Singh</h1>
-            <p style="font-size:1.2rem; margin-top:5px;">Computer Science Student & <br>Aspiring System Architect</p>
-            <button class="run-btn" style="margin-top: 20px;" onclick="moveSlide(1)">See My Roadmap <i class="fas fa-bolt"></i></button>
+            <p>Computer Science Student & <br>Aspiring System Architect</p>
+            <button class="run-btn" onclick="moveSlide(1)">See My Roadmap <i class="fas fa-bolt"></i></button>
           </div>
           <div class="intro-image">
-            <img src="Sudeep.jpg" alt="Sudeep Singh Blueprint">
+            <img src="Sudeep.jpg" alt="Sudeep Singh">
           </div>
         </div>
       </div>
 
       <div class="slide" style="text-align: center;">
-        <img src="https://www.csjmu.ac.in/wp-content/uploads/2021/04/logo.png" alt="CSJMU Logo" style="width: 85px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 0 12px var(--primary));">
+        <img src="https://www.csjmu.ac.in/wp-content/uploads/2021/04/logo.png" alt="CSJMU Logo" style="width: 80px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 0 10px var(--primary));">
         <h2>CSJMU Kanpur Affiliated</h2>
         <div class="grid-2" style="text-align: left; max-width: 850px; margin: 0 auto;">
           <div class="card-tile">
@@ -321,18 +279,18 @@
         <div class="grid-3">
           <div class="card-tile" style="text-align: center;">
             <h3>Online Exam</h3>
-            <p style="font-size:0.95rem; margin-bottom:10px;">Timer portal for MCQs.</p>
+            <p style="font-size:0.9rem; margin-bottom:10px;">Timer portal for MCQs.</p>
             <a href="exam.html" target="_parent" class="run-btn">Run Engine</a>
           </div>
           <div class="card-tile" style="text-align: center;">
             <h3>Smart Calc</h3>
-            <p style="font-size:0.95rem; margin-bottom:10px;">Arithmetic Simulation.</p>
+            <p style="font-size:0.9rem; margin-bottom:10px;">Arithmetic Logic UI.</p>
             <a href="calculator.html" target="_parent" class="run-btn">Run Interface</a>
           </div>
           <div class="card-tile" style="text-align: center;">
-            <h3>Student Base</h3>
-            <p style="font-size:0.95rem; margin-bottom:10px;">Java Database Engine.</p>
-            <a href="student.html" target="_parent" class="run-btn">Run Console</a>
+            <h3>Student Console</h3>
+            <p style="font-size:0.9rem; margin-bottom:10px;">Java DBMS System.</p>
+            <a href="student.html" target="_parent" class="run-btn">Run Core</a>
           </div>
         </div>
       </div>
@@ -340,42 +298,42 @@
       <div class="slide">
         <h2>Danger MCQ Zone: DBMS & OS</h2>
         <div class="danger-box">
-          <strong><i class="fas fa-exclamation-triangle"></i> DBMS Indexing Logic</strong>
+          <strong><i class="fas fa-triangle-exclamation"></i> DBMS Indexing Logic</strong>
           <p>Q: कौन सा इंडेक्स टेबल के फिजिकल ऑर्डर को तय करता है?</p>
-          <p class="ans"><i class="fas fa-check-circle"></i> Clustered Index (One per table).</p>
+          <p class="ans"><i class="fas fa-circle-check"></i> Clustered Index (One per table).</p>
         </div>
         <div class="danger-box">
-          <strong><i class="fas fa-exclamation-triangle"></i> OS: Banker's Algorithm</strong>
+          <strong><i class="fas fa-triangle-exclamation"></i> OS: Banker's Algorithm</strong>
           <p>Q: रिसोर्स एलोकेशन को 'Safe State' में रखने वाला एल्गोरिदम?</p>
-          <p class="ans"><i class="fas fa-check-circle"></i> Banker's Algorithm (Deadlock Avoidance).</p>
+          <p class="ans"><i class="fas fa-circle-check"></i> Banker's Algorithm (Deadlock Avoidance).</p>
         </div>
       </div>
 
       <div class="slide">
         <h2>Danger MCQ Zone: Java & DS</h2>
         <div class="danger-box">
-          <strong><i class="fas fa-exclamation-triangle"></i> Java Memory Management</strong>
+          <strong><i class="fas fa-triangle-exclamation"></i> Java Memory Management</strong>
           <p>Q: Java में क्लास-लेवल ऑब्जेक्ट्स कहाँ स्टोर होते हैं?</p>
-          <p class="ans"><i class="fas fa-check-circle"></i> Heap Area (Method Area/Metaspace).</p>
+          <p class="ans"><i class="fas fa-circle-check"></i> Heap Area (Method Area/Metaspace).</p>
         </div>
         <div class="danger-box">
-          <strong><i class="fas fa-exclamation-triangle"></i> DS: BST Inorder Traversal</strong>
+          <strong><i class="fas fa-triangle-exclamation"></i> DS: BST Inorder Traversal</strong>
           <p>Q: BST का Inorder Traversal क्या आउटपुट देता है?</p>
-          <p class="ans"><i class="fas fa-check-circle"></i> Sorted Ascending Order.</p>
+          <p class="ans"><i class="fas fa-circle-check"></i> Sorted Ascending Order.</p>
         </div>
       </div>
 
       <div class="slide">
         <h2>Danger MCQ Zone: Web & Networks</h2>
         <div class="danger-box">
-          <strong><i class="fas fa-exclamation-triangle"></i> Web: JavaScript Closure</strong>
+          <strong><i class="fas fa-triangle-exclamation"></i> Web: JavaScript Closure</strong>
           <p>Q: एक फंक्शन जब अपनी बाहरी स्कोप के वेरिएबल्स को याद रखता है?</p>
-          <p class="ans"><i class="fas fa-check-circle"></i> Closure Logic Structure.</p>
+          <p class="ans"><i class="fas fa-circle-check"></i> Closure Logic System.</p>
         </div>
         <div class="danger-box">
-          <strong><i class="fas fa-exclamation-triangle"></i> Network: CRC Integrity</strong>
+          <strong><i class="fas fa-triangle-exclamation"></i> Network: CRC Integrity</strong>
           <p>Q: OSI की किस लेयर पर Error Control (CRC) होता है?</p>
-          <p class="ans"><i class="fas fa-check-circle"></i> Data Link Layer (Layer 2).</p>
+          <p class="ans"><i class="fas fa-circle-check"></i> Data Link Layer (Layer 2).</p>
         </div>
       </div>
 
@@ -410,14 +368,14 @@
           </div>
           <div class="bar-item">
             <div class="bar-label">DBMS Data Consistency</div>
-            <div class="bar-track"><div class="bar-fill" data-width="85%">85%</div></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 0%;" data-width="85%">85%</div></div>
           </div>
         </div>
       </div>
 
       <div class="slide" style="text-align: center;">
-        <h1 style="font-size: 3.8rem; margin-bottom:15px; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Thank You!</h1>
-        <p style="font-size: 1.25rem;">Sudeep Singh | Professional Roadmap Completed</p>
+        <h1 style="font-size: 3.5rem; margin-bottom:15px; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Thank You!</h1>
+        <p style="font-size: 1.2rem;">Sudeep Singh | Professional Roadmap Completed</p>
         <div style="margin-top: 25px; color: var(--primary); font-size: 1.4rem; font-weight:700;">
           <i class="fab fa-github"></i> github.com/sudeepsingh-ss
         </div>
@@ -428,4 +386,74 @@
   </div>
 
   <script>
-    const container = document.getElementById(
+    const container = document.getElementById('slidesContainer');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const totalSlides = 13;
+    let currentIdx = 0;
+    let isPaused = false;
+    let slideInterval;
+
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.className = `dot ${i === 0 ? 'active' : ''}`;
+      dot.setAttribute('onclick', `goToSlide(${i})`);
+      dotsContainer.appendChild(dot);
+    }
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlider() {
+      container.style.transform = `translateX(-${currentIdx * (100 / totalSlides)}%)`;
+      
+      const allSlides = document.querySelectorAll('.slide');
+      allSlides.forEach((slide, index) => {
+        if(index === currentIdx) {
+          slide.classList.add('active-slide');
+          const fills = slide.querySelectorAll('.bar-fill');
+          fills.forEach(fill => fill.style.width = fill.getAttribute('data-width'));
+        } else {
+          slide.classList.remove('active-slide');
+          const fills = slide.querySelectorAll('.bar-fill');
+          fills.forEach(fill => fill.style.width = '0%');
+        }
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIdx);
+      });
+    }
+
+    function moveSlide(dir) {
+      currentIdx = (currentIdx + dir + totalSlides) % totalSlides;
+      updateSlider();
+    }
+
+    function goToSlide(idx) {
+      currentIdx = idx;
+      updateSlider();
+    }
+
+    function startTimer() {
+      slideInterval = setInterval(() => moveSlide(1), 6000);
+    }
+
+    function togglePlayPause() {
+      if (isPaused) {
+        startTimer();
+        pauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        clearInterval(slideInterval);
+        pauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+      isPaused = !isPaused;
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-theme');
+    }
+
+    setTimeout(updateSlider, 100);
+    startTimer();
+  </script>
+</body>
+</html>
