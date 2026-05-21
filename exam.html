@@ -1,232 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Online Exam System</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
-
-body{
-background:#020617;
-color:white;
-padding:30px;
-}
-
-.container{
-max-width:800px;
-margin:auto;
-background:rgba(15,23,42,.85);
-padding:30px;
-border-radius:25px;
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
-}
-
-h1{
-text-align:center;
-margin-bottom:20px;
-}
-
-.timer{
-text-align:right;
-font-size:1.2rem;
-margin-bottom:20px;
-color:#38bdf8;
-font-weight:700;
-}
-
-.question-box{
-margin-bottom:25px;
-padding:20px;
-background:#1e293b;
-border-radius:15px;
-}
-
-.question{
-font-size:1.1rem;
-margin-bottom:15px;
-}
-
-.option{
-display:block;
-margin:10px 0;
-padding:12px;
-background:#0f172a;
-border-radius:10px;
-cursor:pointer;
-transition:.3s;
-}
-
-.option:hover{
-background:#38bdf8;
-}
-
-button{
-padding:14px 28px;
-border:none;
-border-radius:12px;
-background:linear-gradient(135deg,#38bdf8,#6366f1);
-color:white;
-font-weight:700;
-cursor:pointer;
-display:block;
-margin:auto;
-}
-
-.result{
-text-align:center;
-font-size:1.4rem;
-margin-top:20px;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam System | Sudeep Thakur</title>
+    <style>
+        :root { --bg: #020617; --primary: #38bdf8; --text: #f8fafc; }
+        body { background: var(--bg); color: var(--text); font-family: sans-serif; display: flex; justify-content: center; padding: 50px; }
+        .exam-card { background: rgba(15, 23, 42, 0.9); padding: 40px; border-radius: 20px; width: 100%; max-width: 600px; border: 1px solid #334155; }
+        .timer { color: var(--primary); font-weight: bold; font-size: 1.2rem; margin-bottom: 20px; }
+        .question { margin-bottom: 20px; }
+        button { background: var(--primary); border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
-
-<h1>CSJMU Online Exam</h1>
-
-<div class="timer">
-Time Left:
-<span id="time">60</span>s
-</div>
-
-<div id="quiz"></div>
-
-<button onclick="submitExam()">
-Submit Exam
-</button>
-
-<div class="result" id="result"></div>
-
+<div class="exam-card">
+    <div class="timer" id="timer">Time Left: 05:00</div>
+    <div id="quiz">
+        <h2 id="question">Loading Question...</h2>
+        <div id="options"></div>
+    </div>
+    <button onclick="nextQuestion()" style="margin-top:20px;">Next Question</button>
 </div>
 
 <script>
+    const questions = [
+        { q: "What is the size of int in Java?", options: ["2 bytes", "4 bytes", "8 bytes", "1 byte"], a: 1 },
+        { q: "Which of the following is a database?", options: ["HTML", "CSS", "MySQL", "Java"], a: 2 },
+        { q: "What does HTML stand for?", options: ["HyperText Markup Language", "HighText Machine Language", "HyperTool Multi Language", "None"], a: 0 }
+    ];
 
-const questions=[
+    let current = 0;
+    let score = 0;
 
-{
-q:"Which language is used for web styling?",
-options:["HTML","CSS","Python","Java"],
-answer:"CSS"
-},
+    function loadQuestion() {
+        const qObj = questions[current];
+        document.getElementById('question').innerText = qObj.q;
+        const optDiv = document.getElementById('options');
+        optDiv.innerHTML = '';
+        qObj.options.forEach((opt, i) => {
+            optDiv.innerHTML += `<div style="margin:10px 0;"><input type="radio" name="ans" value="${i}"> ${opt}</div>`;
+        });
+    }
 
-{
-q:"Which SQL command is used to fetch data?",
-options:["GET","FETCH","SELECT","SHOW"],
-answer:"SELECT"
-},
+    function nextQuestion() {
+        const selected = document.querySelector('input[name="ans"]:checked');
+        if(selected && selected.value == questions[current].a) score++;
+        current++;
+        if(current < questions.length) loadQuestion();
+        else document.getElementById('quiz').innerHTML = `<h2>Exam Finished! Score: ${score}/${questions.length}</h2>`;
+    }
 
-{
-q:"Which scheduling algorithm uses time quantum?",
-options:["FCFS","Round Robin","SJF","Priority"],
-answer:"Round Robin"
-},
+    // Timer Logic
+    let time = 300;
+    setInterval(() => {
+        time--;
+        document.getElementById('timer').innerText = `Time Left: ${Math.floor(time/60)}:${time%60}`;
+    }, 1000);
 
-{
-q:"Java is a?",
-options:["Compiler","Interpreter","Programming Language","OS"],
-answer:"Programming Language"
-},
-
-{
-q:"Which layer handles routing?",
-options:["Transport","Network","Session","Data Link"],
-answer:"Network"
-},
-
-{
-q:"Which data structure uses FIFO?",
-options:["Stack","Queue","Tree","Graph"],
-answer:"Queue"
-}
-
-];
-
-questions.sort(()=>Math.random()-0.5);
-
-const quiz=document.getElementById('quiz');
-
-questions.forEach((q,index)=>{
-
-let html=`
-<div class="question-box">
-
-<div class="question">
-${index+1}. ${q.q}
-</div>
-`;
-
-q.options.forEach(option=>{
-
-html+=`
-<label class="option">
-
-<input type="radio"
-name="q${index}"
-value="${option}">
-
-${option}
-
-</label>
-`;
-
-});
-
-html+=</div>;
-
-quiz.innerHTML+=html;
-
-});
-
-function submitExam(){
-
-let score=0;
-
-questions.forEach((q,index)=>{
-
-const ans=document.querySelector(input[name="q${index}"]:checked);
-
-if(ans && ans.value===q.answer){
-score++;
-}
-
-});
-
-document.getElementById('result').innerHTML=
-You scored ${score} out of ${questions.length};
-
-}
-
-let time=60;
-
-const timer=setInterval(()=>{
-
-time--;
-
-document.getElementById('time').innerText=time;
-
-if(time<=0){
-
-clearInterval(timer);
-
-submitExam();
-
-}
-
-},1000);
-
+    loadQuestion();
 </script>
 
 </body>
