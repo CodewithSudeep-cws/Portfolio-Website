@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sudeep Thakur | Futuristic Portfolio</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <style>
 
@@ -19,19 +25,9 @@ font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
-:root{
---bg:#020617;
---card:#0f172a;
---primary:#38bdf8;
---secondary:#6366f1;
---text:#f8fafc;
---muted:#94a3b8;
---border:rgba(255,255,255,.08);
-}
-
 body{
-background:var(--bg);
-color:var(--text);
+background:#020617;
+color:white;
 overflow-x:hidden;
 }
 
@@ -43,16 +39,16 @@ height:100%;
 background:
 radial-gradient(circle at top right, rgba(56,189,248,.15), transparent 30%),
 radial-gradient(circle at bottom left, rgba(99,102,241,.15), transparent 30%);
+z-index:-2;
+}
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
 z-index:-1;
-}
-
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-background:linear-gradient(var(--primary),var(--secondary));
-border-radius:20px;
 }
 
 header{
@@ -62,18 +58,18 @@ left:0;
 width:100%;
 padding:20px 8%;
 background:rgba(2,6,23,.7);
-backdrop-filter:blur(16px);
+backdrop-filter:blur(15px);
 display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:1000;
-border-bottom:1px solid var(--border);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
 font-size:1.8rem;
 font-weight:800;
-background:linear-gradient(135deg,var(--primary),var(--secondary));
+background:linear-gradient(135deg,#38bdf8,#6366f1);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -84,14 +80,14 @@ gap:25px;
 }
 
 nav a{
-color:var(--muted);
+color:#cbd5e1;
 text-decoration:none;
 font-weight:600;
 transition:.3s;
 }
 
 nav a:hover{
-color:var(--primary);
+color:#38bdf8;
 }
 
 .hero{
@@ -104,7 +100,7 @@ padding:120px 8%;
 
 .hero-container{
 display:grid;
-grid-template-columns:1fr 400px;
+grid-template-columns:1fr 380px;
 gap:70px;
 align-items:center;
 width:100%;
@@ -119,20 +115,21 @@ font-weight:800;
 }
 
 .hero-text span{
-background:linear-gradient(135deg,var(--primary),var(--secondary));
+background:linear-gradient(135deg,#38bdf8,#6366f1);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .typing{
 font-size:1.4rem;
-color:var(--primary);
+color:#38bdf8;
 margin-bottom:20px;
 font-weight:600;
+height:40px;
 }
 
 .hero-text p{
-color:var(--muted);
+color:#94a3b8;
 line-height:1.9;
 margin-bottom:35px;
 font-size:1.05rem;
@@ -156,14 +153,14 @@ gap:10px;
 }
 
 .primary-btn{
-background:linear-gradient(135deg,var(--primary),var(--secondary));
+background:linear-gradient(135deg,#38bdf8,#6366f1);
 color:white;
 box-shadow:0 10px 30px rgba(56,189,248,.3);
 }
 
 .secondary-btn{
-border:1px solid var(--border);
-color:var(--text);
+border:1px solid rgba(255,255,255,.1);
+color:white;
 background:rgba(255,255,255,.03);
 }
 
@@ -172,32 +169,25 @@ transform:translateY(-5px);
 }
 
 .hero-image{
-position:relative;
 display:flex;
 justify-content:center;
-align-items:center;
 }
 
 .image-box{
-width:350px;
-height:350px;
+width:330px;
+height:330px;
 border-radius:50%;
 padding:8px;
-background:linear-gradient(135deg,var(--primary),var(--secondary));
+background:linear-gradient(135deg,#38bdf8,#6366f1);
+box-shadow:0 0 40px rgba(56,189,248,.4);
 }
 
 .image-box img{
 width:100%;
 height:100%;
-border-radius:50%;
 object-fit:cover;
-border:8px solid #020617;
-}
-
-@keyframes rotate{
-100%{
-transform:rotate(360deg);
-}
+border-radius:50%;
+border:6px solid #020617;
 }
 
 section{
@@ -212,7 +202,7 @@ font-weight:800;
 }
 
 .section-title span{
-background:linear-gradient(135deg,var(--primary),var(--secondary));
+background:linear-gradient(135deg,#38bdf8,#6366f1);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -225,38 +215,24 @@ gap:30px;
 
 .project-card{
 background:rgba(15,23,42,.7);
-border:1px solid var(--border);
-border-radius:24px;
 padding:35px;
-transition:.5s;
-position:relative;
-overflow:hidden;
-transform-style:preserve-3d;
+border-radius:24px;
+border:1px solid rgba(255,255,255,.08);
 backdrop-filter:blur(15px);
-}
-
-.project-card::before{
-content:'';
-position:absolute;
-width:200%;
-height:200%;
-background:linear-gradient(45deg,transparent,var(--primary),transparent);
-top:-50%;
-left:-50%;
-transform:rotate(45deg);
-opacity:.08;
+transition:.5s;
+transform-style:preserve-3d;
 }
 
 .project-card:hover{
-transform:translateY(-12px) rotateX(5deg) rotateY(-5deg);
-box-shadow:0 20px 50px rgba(56,189,248,.2);
-border-color:var(--primary);
+transform:translateY(-10px) rotateX(5deg);
+border-color:#38bdf8;
+box-shadow:0 20px 40px rgba(56,189,248,.2);
 }
 
 .project-card i{
 font-size:3rem;
 margin-bottom:20px;
-background:linear-gradient(135deg,var(--primary),var(--secondary));
+background:linear-gradient(135deg,#38bdf8,#6366f1);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -267,7 +243,7 @@ margin-bottom:15px;
 }
 
 .project-card p{
-color:var(--muted);
+color:#94a3b8;
 line-height:1.8;
 margin-bottom:25px;
 }
@@ -276,17 +252,17 @@ margin-bottom:25px;
 display:inline-flex;
 align-items:center;
 gap:10px;
-text-decoration:none;
-color:white;
-padding:12px 22px;
+padding:13px 24px;
 border-radius:12px;
-background:linear-gradient(135deg,var(--primary),var(--secondary));
+background:linear-gradient(135deg,#38bdf8,#6366f1);
+color:white;
+text-decoration:none;
 font-weight:700;
-transition:.4s;
+transition:.3s;
 }
 
 .project-btn:hover{
-transform:scale(1.06);
+transform:scale(1.05);
 }
 
 .skills-grid{
@@ -299,22 +275,20 @@ gap:25px;
 background:rgba(15,23,42,.7);
 padding:30px;
 border-radius:24px;
-border:1px solid var(--border);
-transition:.4s;
+border:1px solid rgba(255,255,255,.08);
 cursor:pointer;
-position:relative;
-overflow:hidden;
+transition:.4s;
 }
 
 .skill-card:hover{
 transform:translateY(-8px);
-border-color:var(--primary);
+border-color:#38bdf8;
 }
 
 .skill-card i{
 font-size:2.5rem;
 margin-bottom:20px;
-background:linear-gradient(135deg,var(--primary),var(--secondary));
+background:linear-gradient(135deg,#38bdf8,#6366f1);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -327,25 +301,13 @@ margin-bottom:15px;
 display:none;
 margin-top:20px;
 padding-top:20px;
-border-top:1px solid var(--border);
-color:var(--muted);
+border-top:1px solid rgba(255,255,255,.08);
 line-height:1.8;
+color:#94a3b8;
 }
 
 .skill-card.active .skill-info{
 display:block;
-animation:fade .5s ease;
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(10px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
 }
 
 .presentation{
@@ -353,13 +315,12 @@ max-width:1100px;
 margin:auto;
 overflow:hidden;
 border-radius:30px;
-border:1px solid var(--border);
 background:rgba(15,23,42,.8);
+border:1px solid rgba(255,255,255,.08);
 backdrop-filter:blur(15px);
-position:relative;
 }
 
-.presentation-track{
+.track{
 display:flex;
 width:700%;
 transition:1s ease;
@@ -367,8 +328,8 @@ transition:1s ease;
 
 .slide{
 width:100%;
-padding:70px;
 flex-shrink:0;
+padding:70px;
 min-height:500px;
 display:flex;
 flex-direction:column;
@@ -378,13 +339,13 @@ justify-content:center;
 .slide h3{
 font-size:2.3rem;
 margin-bottom:25px;
-color:var(--primary);
+color:#38bdf8;
 }
 
 .slide p,
 .slide li{
-color:var(--muted);
 line-height:1.9;
+color:#94a3b8;
 font-size:1.05rem;
 }
 
@@ -395,7 +356,7 @@ padding-left:25px;
 .footer{
 padding:60px 8%;
 text-align:center;
-border-top:1px solid var(--border);
+border-top:1px solid rgba(255,255,255,.08);
 }
 
 .socials{
@@ -415,13 +376,41 @@ border-radius:50%;
 background:rgba(255,255,255,.05);
 color:white;
 font-size:1.3rem;
-transition:.4s;
 text-decoration:none;
+transition:.4s;
 }
 
 .socials a:hover{
-background:linear-gradient(135deg,var(--primary),var(--secondary));
+background:linear-gradient(135deg,#38bdf8,#6366f1);
 transform:translateY(-6px);
+}
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#020617;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:99999;
+}
+
+.spinner{
+width:90px;
+height:90px;
+border:6px solid rgba(255,255,255,.1);
+border-top:6px solid #38bdf8;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-bottom:20px;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
 }
 
 @media(max-width:992px){
@@ -436,62 +425,74 @@ order:-1;
 }
 
 .hero-text h1{
-font-size:3.2rem;
+font-size:3rem;
 }
 
 .btns{
 justify-content:center;
 }
 
-.slide{
-padding:40px;
-}
-
 }
 
 @media(max-width:768px){
-
-header{
-padding:20px;
-}
 
 nav{
 display:none;
 }
 
 .hero-text h1{
-font-size:2.6rem;
+font-size:2.4rem;
 }
 
 .image-box{
-width:260px;
-height:260px;
+width:250px;
+height:250px;
+}
+
+.slide{
+padding:40px;
 }
 
 .section-title{
-font-size:2.3rem;
-}
-
-.slide h3{
-font-size:1.7rem;
+font-size:2.2rem;
 }
 
 }
 
 </style>
+
 </head>
+
 <body>
+
+<div id="loader">
+
+<div class="spinner"></div>
+
+<h2>Loading Portfolio...</h2>
+
+</div>
+
+<canvas id="particles"></canvas>
 
 <header>
 
-<div class="logo">Sudeep Thakur</div>
+<div class="logo">
+Sudeep Thakur
+</div>
 
 <nav>
+
 <a href="#home">Home</a>
+
 <a href="#projects">Projects</a>
+
 <a href="#skills">Skills</a>
+
 <a href="#roadmap">Roadmap</a>
+
 <a href="#contact">Contact</a>
+
 </nav>
 
 </header>
@@ -503,28 +504,39 @@ font-size:1.7rem;
 <div class="hero-text">
 
 <div class="typing">
-Computer Science Student & Developer
+<span id="typing-text"></span>
 </div>
 
 <h1>
+
 Hi, I'm <br>
+
 <span>Sudeep Thakur</span>
+
 </h1>
 
 <p>
-Passionate B.Sc Computer Science student from CSJMU Kanpur focused on Web Development, Java Programming, Database Systems, Operating Systems and Modern Responsive UI Architectures.
+
+B.Sc Computer Science student from CSJMU Kanpur focused on Java, Web Development, DBMS, Operating Systems and Networking.
+
 </p>
 
 <div class="btns">
 
 <a href="#projects" class="btn primary-btn">
+
 <i class="fas fa-code"></i>
+
 Explore Projects
+
 </a>
 
-<a href="mailto:sudeepsikarwar3@gmail.comd" class="btn secondary-btn">
-<i class="fas fa-envelope"></i>
-Contact Me
+<a href="resume.pdf" download class="btn secondary-btn">
+
+<i class="fas fa-download"></i>
+
+Download Resume
+
 </a>
 
 </div>
@@ -534,7 +546,9 @@ Contact Me
 <div class="hero-image">
 
 <div class="image-box">
+
 <img src="Sudeep.jpg">
+
 </div>
 
 </div>
@@ -546,7 +560,9 @@ Contact Me
 <section id="projects">
 
 <h2 class="section-title">
+
 My <span>Projects</span>
+
 </h2>
 
 <div class="projects-grid">
@@ -558,12 +574,17 @@ My <span>Projects</span>
 <h3>Online Exam System</h3>
 
 <p>
-Advanced MCQ examination portal with random questions, timer system, score analysis and futuristic responsive UI.
+
+Advanced MCQ exam system with timer and random questions.
+
 </p>
 
-<a href="exam.html" class="project-btn">
+<a href="./exam.html" class="project-btn">
+
 Live Demo
+
 <i class="fas fa-arrow-right"></i>
+
 </a>
 
 </div>
@@ -575,12 +596,17 @@ Live Demo
 <h3>Smart Calculator</h3>
 
 <p>
-Modern animated calculator designed using JavaScript with responsive logic and smooth futuristic effects.
+
+Responsive futuristic calculator using JavaScript logic.
+
 </p>
 
-<a href="calculator.html" class="project-btn">
+<a href="./calculator.html" class="project-btn">
+
 Live Demo
+
 <i class="fas fa-arrow-right"></i>
+
 </a>
 
 </div>
@@ -592,12 +618,17 @@ Live Demo
 <h3>Student Management</h3>
 
 <p>
-Database based student management system with optimized record handling and clean interactive interface.
+
+Student database management project with records handling.
+
 </p>
 
-<a href="student.html" class="project-btn">
+<a href="./student.html" class="project-btn">
+
 Live Demo
+
 <i class="fas fa-arrow-right"></i>
+
 </a>
 
 </div>
@@ -609,91 +640,111 @@ Live Demo
 <section id="skills">
 
 <h2 class="section-title">
+
 Technical <span>Skills</span>
+
 </h2>
 
 <div class="skills-grid">
 
 <div class="skill-card" onclick="toggleSkill(this)">
+
 <i class="fab fa-html5"></i>
+
 <h3>HTML / CSS</h3>
 
 <div class="skill-info">
-* Semantic HTML <br>
-* Flexbox & Grid <br>
+
 * Responsive Design <br>
-* Glassmorphism UI <br>
-* CSS Animations
+* Flexbox & Grid <br>
+* CSS Animations <br>
+* Glassmorphism UI
+
 </div>
 
 </div>
 
 <div class="skill-card" onclick="toggleSkill(this)">
+
 <i class="fab fa-js"></i>
+
 <h3>JavaScript</h3>
 
 <div class="skill-info">
+
 * DOM Manipulation <br>
-* Event Handling <br>
 * Arrays & Objects <br>
-* Async JavaScript <br>
-* Dynamic Logic
+* Event Handling <br>
+* Dynamic Projects
+
 </div>
 
 </div>
 
 <div class="skill-card" onclick="toggleSkill(this)">
+
 <i class="fab fa-java"></i>
+
 <h3>Java</h3>
 
 <div class="skill-info">
+
 * OOP Concepts <br>
-* Multithreading <br>
 * Exception Handling <br>
-* Collections Framework <br>
-* JVM Concepts
+* Multithreading <br>
+* Collections
+
 </div>
 
 </div>
 
 <div class="skill-card" onclick="toggleSkill(this)">
+
 <i class="fas fa-database"></i>
+
 <h3>DBMS</h3>
 
 <div class="skill-info">
+
 * SQL Queries <br>
 * Normalization <br>
-* ER Model <br>
 * Transactions <br>
 * Indexing
+
 </div>
 
 </div>
 
 <div class="skill-card" onclick="toggleSkill(this)">
+
 <i class="fas fa-microchip"></i>
+
 <h3>Operating System</h3>
 
 <div class="skill-info">
-* Scheduling Algorithms <br>
+
+* Scheduling <br>
 * Deadlocks <br>
 * Memory Management <br>
-* Paging & Segmentation <br>
-* File System
+* Paging
+
 </div>
 
 </div>
 
 <div class="skill-card" onclick="toggleSkill(this)">
+
 <i class="fas fa-network-wired"></i>
+
 <h3>Networking</h3>
 
 <div class="skill-info">
+
 * OSI Model <br>
 * TCP/IP <br>
 * Routing <br>
-* CRC Error Detection <br>
-* Network Security
+* CRC
+
 </div>
 
 </div>
@@ -705,19 +756,23 @@ Technical <span>Skills</span>
 <section id="roadmap">
 
 <h2 class="section-title">
+
 Academic <span>Roadmap</span>
+
 </h2>
 
 <div class="presentation">
 
-<div class="presentation-track" id="track">
+<div class="track" id="track">
 
 <div class="slide">
 
 <h3>CSJMU Kanpur</h3>
 
 <p>
-B.Sc Computer Science academic journey based on NEP-2020 curriculum focused on programming, software development and modern technologies.
+
+B.Sc Computer Science academic roadmap based on NEP 2020 syllabus.
+
 </p>
 
 </div>
@@ -727,10 +782,13 @@ B.Sc Computer Science academic journey based on NEP-2020 curriculum focused on p
 <h3>Semester I</h3>
 
 <ul>
-<li>Python Fundamentals</li>
-<li>Programming Logic</li>
-<li>Computer Basics</li>
+
+<li>Python Programming</li>
+
 <li>Problem Solving</li>
+
+<li>Computer Fundamentals</li>
+
 </ul>
 
 </div>
@@ -740,10 +798,13 @@ B.Sc Computer Science academic journey based on NEP-2020 curriculum focused on p
 <h3>Semester II</h3>
 
 <ul>
+
 <li>DBMS</li>
+
 <li>SQL Queries</li>
+
 <li>Normalization</li>
-<li>ER Models</li>
+
 </ul>
 
 </div>
@@ -753,10 +814,13 @@ B.Sc Computer Science academic journey based on NEP-2020 curriculum focused on p
 <h3>Semester III & IV</h3>
 
 <ul>
+
 <li>C Programming</li>
+
 <li>Data Structures</li>
+
 <li>Operating Systems</li>
-<li>Deadlock & Scheduling</li>
+
 </ul>
 
 </div>
@@ -766,10 +830,13 @@ B.Sc Computer Science academic journey based on NEP-2020 curriculum focused on p
 <h3>Semester V</h3>
 
 <ul>
+
 <li>Core Java</li>
+
 <li>OOP Concepts</li>
-<li>Java Collections</li>
-<li>Multithreading</li>
+
+<li>Collections</li>
+
 </ul>
 
 </div>
@@ -779,19 +846,23 @@ B.Sc Computer Science academic journey based on NEP-2020 curriculum focused on p
 <h3>Semester VI</h3>
 
 <ul>
+
 <li>Web Technology</li>
-<li>HTML CSS JavaScript</li>
-<li>Computer Networks</li>
+
+<li>Networking</li>
+
 <li>Cyber Security</li>
+
 </ul>
 
 </div>
 
 <div class="slide">
 
-<h3>Thank You!</h3>
+<h3>Thank You</h3>
 
 <p>
+
 Sudeep Thakur <br><br>
 
 GitHub:
@@ -799,6 +870,7 @@ github.com/sudeepsingh-ss <br><br>
 
 Email:
 sudeepsikarwar3@gmail.comd
+
 </p>
 
 </div>
@@ -812,49 +884,157 @@ sudeepsikarwar3@gmail.comd
 <footer class="footer" id="contact">
 
 <h2 class="section-title">
+
 Let's <span>Connect</span>
+
 </h2>
 
 <div class="socials">
 
 <a href="https://github.com/sudeepsingh-ss" target="_blank">
+
 <i class="fab fa-github"></i>
+
 </a>
 
 <a href="https://linkedin.com" target="_blank">
+
 <i class="fab fa-linkedin"></i>
+
 </a>
 
 <a href="mailto:sudeepsikarwar3@gmail.comd">
+
 <i class="fas fa-envelope"></i>
+
 </a>
 
 </div>
 
-<p style="color:var(--muted)">
+<p style="color:#94a3b8">
+
 © 2026 Sudeep Thakur | Futuristic Portfolio
+
 </p>
 
 </footer>
 
 <script>
 
+window.addEventListener('load',()=>{
+
+document.getElementById('loader').style.display='none';
+
+});
+
 function toggleSkill(card){
+
 card.classList.toggle('active');
+
 }
+
+const text=[
+'Web Developer',
+'Java Programmer',
+'CSJMU Student',
+'Frontend Designer'
+];
+
+let count=0;
+let index=0;
+let currentText='';
+let letter='';
+
+(function type(){
+
+if(count===text.length){
+count=0;
+}
+
+currentText=text[count];
+
+letter=currentText.slice(0,++index);
+
+document.getElementById('typing-text').textContent=letter;
+
+if(letter.length===currentText.length){
+
+count++;
+index=0;
+
+setTimeout(type,1200);
+
+}else{
+
+setTimeout(type,120);
+
+}
+
+})();
 
 const track=document.getElementById('track');
 
-let index=0;
+let slideIndex=0;
 
 setInterval(()=>{
 
-index=(index+1)%7;
+slideIndex=(slideIndex+1)%7;
 
 track.style.transform=
-'translateX(-'+(index*100)+'%)';
+'translateX(-'+(slideIndex*100)+'%)';
 
 },5000);
+
+const canvas=document.getElementById('particles');
+
+const ctx=canvas.getContext('2d');
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<80;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*3+1,
+dx:(Math.random()-.5)*2,
+dy:(Math.random()-.5)*2
+
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+
+ctx.fillStyle='#38bdf8';
+
+ctx.fill();
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
 
 </script>
 
